@@ -33,6 +33,8 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+       //viewModel = (activity as NewsActivity).viewModel
+
         val newsRepository = NewsRepository(ArticleDatabase(requireContext()))
         val viewModelProviderFactory = NewsViewModelProviderFactory(requireActivity().application, newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
